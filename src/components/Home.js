@@ -1,10 +1,13 @@
 import React from 'react'
 
+import Page from '../elements/Page';
+import ToolBar from './ToolBar';
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <Page>
+            <ToolBar />
+        </Page>
     )
 }
 

@@ -27,7 +27,7 @@ const Index = () => {
             <Route exact path='/' component={Home} />
             <Route path='/edit/:id' component={EditAccount} />
             <Route path='/add' component={AddAccount} />
-          </Switch>
+          </Switch> 
         </Container>  
       </BrowserRouter>
 

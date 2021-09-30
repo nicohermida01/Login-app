@@ -1,5 +1,6 @@
 const Colors = {
     BASEDARK: '#000000',
+    BASEDARK2: '#333333',
 
     BASEBLUE1: '#00285B',
     BASEBLUE2: '#154884',

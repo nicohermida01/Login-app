@@ -18,6 +18,7 @@ export default Header;
 const Conteiner = styled.div`
     width: 100%;
     height: 40px;
+    max-height: 40px;
     background: ${Colors.BASEBLUE3};
     display: flex;
     justify-content: center;

@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Container from './elements/Container';
+import Images from './commons/Images';
+import Home from './components/Home';
+import EditAccount from './components/EditAccount';
+import AddAccount from './components/AddAccount';
+import Header from './components/Header';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Index = () => {
+  return(
+    <React.StrictMode>
+      <Helmet>
+        <title>LogIn App</title>
+        <link rel='icon' type='image/x-icon' href={Images.favicon} />
+      </Helmet>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <BrowserRouter>
+        <Container>
+          <Header />  
+
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/edit/:id' component={EditAccount} />
+            <Route path='/add' component={AddAccount} />
+          </Switch>
+        </Container>  
+      </BrowserRouter>
+
+    </React.StrictMode>
+  )
+}
+
+ReactDOM.render(<Index />, document.getElementById('root'));
+
+

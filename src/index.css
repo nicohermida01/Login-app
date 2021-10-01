@@ -12,23 +12,20 @@
   font-weight: 700;
 }
 
+:root {
+  --app-max-width: 1600px;
+}
+
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; 
   box-sizing: border-box;
 }
 
 body {
-  background: #f2f2f2;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: Sansation, sans-serif;
-  background: url('./assets/images/wave-background.svg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #00285B url('./assets/images/wave.svg') bottom no-repeat fixed;
 }
 
 #root {

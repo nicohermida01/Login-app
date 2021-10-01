@@ -1,13 +1,10 @@
-import React from 'react'
-
-import Page from '../elements/Page';
-import ToolBar from './ToolBar';
+import React from 'react';
 
 const Home = () => {
     return (
-        <Page>
-            <ToolBar />
-        </Page>
+        <div>
+            <h1>Home</h1>
+        </div>
     )
 }
 

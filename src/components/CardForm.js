@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
 
 const CardForm = ({ username, password, email }) => {
+    const [visiblePassword, setVisiblePassword] = useState(false);
+
+
     return (
         <Form>
             <InputContainer>
@@ -14,13 +17,32 @@ const CardForm = ({ username, password, email }) => {
                 />
                 <UserIcon />
             </InputContainer>
-            <InputContainer>
-                <Input 
-                    type="password" 
-                    value={password}
-                />
-                <PasswordIcon />
-            </InputContainer>
+
+            {
+                visiblePassword ?
+                    <InputContainer>
+                        <Input 
+                            type="text" 
+                            value={password}
+                        />
+                        <PasswordIcon />
+                        <HelperPasswordContainer>
+                            <UnHidePassword onClick={() => setVisiblePassword(!visiblePassword)} id='unHidePassword'/>
+                        </HelperPasswordContainer>
+                    </InputContainer>
+                :
+                    <InputContainer>
+                        <Input 
+                            type="password" 
+                            value={password}
+                        />
+                        <PasswordIcon />
+                        <HelperPasswordContainer>
+                            <HidePassword onClick={() => setVisiblePassword(!visiblePassword)} id='hidePassword'/>
+                        </HelperPasswordContainer>    
+                    </InputContainer>
+            }
+
             <InputContainer>
                 <Input 
                     type="email" 
@@ -53,6 +75,7 @@ const InputContainer = styled.div`
         top: 5px;
         left: 0;
     }
+
 `;
 
 const Input = styled.input`
@@ -69,6 +92,23 @@ const Input = styled.input`
     padding-bottom: 3px;
 `;
 
+const HelperPasswordContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & > svg {
+        width: 20px;
+        height: 20px;
+        fill: ${Colors.BASEBLUE4};
+        position: absolute;
+        top: -26px;
+        right: 0;
+    }
+`;
+
 const UserIcon = styled(Images.user)``;
 const PasswordIcon = styled(Images.lockPassword)``;
 const EmailIcon = styled(Images.email)``;
+const HidePassword = styled(Images.hidePassword)``;
+const UnHidePassword = styled(Images.unHidePassword)``;

@@ -16,11 +16,11 @@ const Home = () => {
         },
         {
             id: 2,
-            platformName: 'Twitter',
+            platformName: 'Instagram',
             platformType: 'Social',
-            username: 'nicoohermida',
-            password: '123456',
-            email: 'nico@correo.com'
+            username: 'elJudio123',
+            password: 'elameculos',
+            email: 'callejas@correo.com'
         },
         {
             id: 3,
@@ -45,6 +45,14 @@ const Home = () => {
             username: 'nicoohermida',
             password: '123456',
             email: 'nico@correo.com'
+        },
+        {
+            id: 6,
+            platformName: 'GTA',
+            platformType: 'Game',
+            username: 'kylu',
+            password: '123456',
+            email: 'kylu@correo.com'
         },
 
     ];

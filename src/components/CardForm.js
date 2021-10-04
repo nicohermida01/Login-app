@@ -4,27 +4,27 @@ import styled from 'styled-components';
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
 
-const CardForm = () => {
+const CardForm = ({ username, password, email }) => {
     return (
         <Form>
             <InputContainer>
                 <Input 
                     type="text"
-                    value='nicoo_hermida' 
+                    value={username}
                 />
                 <UserIcon />
             </InputContainer>
             <InputContainer>
                 <Input 
                     type="password" 
-                    value='123456789'
+                    value={password}
                 />
                 <PasswordIcon />
             </InputContainer>
             <InputContainer>
                 <Input 
                     type="email" 
-                    value='nico@correo.com'
+                    value={email}
                 />
                 <EmailIcon />
             </InputContainer>

@@ -6,20 +6,24 @@ import { ButtonDeleteAccount, ButtonEditAccount } from './Buttons';
 import Card from '../elements/CardElements';
 import CardForm from './CardForm';
 
-const CardAccount = () => {
+const CardAccount = ({ platformName, platformType, username, password, email }) => {
     return (
         <Card>
             <CardHeader>
                 <CardDetails>
-                    <PlatformName>Facebook</PlatformName>
-                    <PlatformType>Social</PlatformType>
+                    <PlatformName>{platformName}</PlatformName>
+                    <PlatformType>{platformType}</PlatformType>
                 </CardDetails>
                 <CardButtons>
                     <ButtonEditAccount />
                     <ButtonDeleteAccount />
                 </CardButtons>
             </CardHeader>
-            <CardForm />
+            <CardForm 
+                username={username}
+                password={password}
+                email={email}
+            />
         </Card>
     )
 }

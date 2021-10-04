@@ -5,9 +5,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
 import Images from './commons/Images';
-import Home from './components/Home';
-import EditAccount from './components/EditAccount';
-import AddAccount from './components/AddAccount';
+import Home from './pages/Home';
+import EditAccount from './pages/EditAccount';
+import AddAccount from './pages/AddAccount';
 import Header from './components/Header';
 
 const Index = () => {

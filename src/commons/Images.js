@@ -9,6 +9,8 @@ import { ReactComponent as HidePasswordIcon } from '../assets/images/hide-passwo
 import { ReactComponent as LockPasswordIcon } from '../assets/images/lock-password.svg';
 import { ReactComponent as PictureAppIcon } from '../assets/images/picture-app.svg';
 import { ReactComponent as UserIcon } from '../assets/images/user.svg';
+import { ReactComponent as SearchIcon } from '../assets/images/search.svg';
+import { ReactComponent as EmailIcon } from '../assets/images/email.svg';
 
 const Images = {
     favicon: Favicon,
@@ -22,7 +24,9 @@ const Images = {
     lockPassword: LockPasswordIcon,
     pictureApp: PictureAppIcon,
     user: UserIcon,
-
+    search: SearchIcon,
+    email: EmailIcon,
+    
 }
 
 export default Images;

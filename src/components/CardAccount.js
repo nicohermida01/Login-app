@@ -39,8 +39,9 @@ const CardHeader = styled.header`
 const CardDetails = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-weight: bold;
+
+    position: relative;
 `;
 
 const PlatformName = styled.span`
@@ -52,6 +53,10 @@ const PlatformType = styled.span`
     font-size: 18px;
     color: ${Colors.BASEBLUE1};
     margin-top: 1px;
+
+    position: absolute;
+    top: 32px;
+    left: 16px;
 `;
 
 const CardButtons = styled.div`

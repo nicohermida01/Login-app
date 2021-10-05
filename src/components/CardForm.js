@@ -7,7 +7,6 @@ import Images from '../commons/Images';
 const CardForm = ({ username, password, email }) => {
     const [visiblePassword, setVisiblePassword] = useState(false);
 
-
     return (
         <Form>
             <InputContainer>
@@ -27,7 +26,7 @@ const CardForm = ({ username, password, email }) => {
                         />
                         <PasswordIcon />
                         <HelperPasswordContainer>
-                            <UnHidePassword onClick={() => setVisiblePassword(!visiblePassword)} id='unHidePassword'/>
+                            <UnHidePassword onClick={() => setVisiblePassword(!visiblePassword)} />
                         </HelperPasswordContainer>
                     </InputContainer>
                 :
@@ -38,7 +37,7 @@ const CardForm = ({ username, password, email }) => {
                         />
                         <PasswordIcon />
                         <HelperPasswordContainer>
-                            <HidePassword onClick={() => setVisiblePassword(!visiblePassword)} id='hidePassword'/>
+                            <HidePassword onClick={() => setVisiblePassword(!visiblePassword)} />
                         </HelperPasswordContainer>    
                     </InputContainer>
             }

@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Images from '../commons/Images';
 import Colors from '../commons/Colors';
+import { useAppContext } from '../context/AppContext';
 
 const SearchBox = () => {
-    const [input, setInput] = useState('');
+    const {
+        data: { searchBoxInput },
+        actions: { updateSearchBox }
+    } = useAppContext();
+
+    const handleInputChange = (e) => {
+        const inputValue = e.target.value;
+        updateSearchBox(inputValue);
+    }
 
     return (
         <SearchBoxContainer>
             <SearchInput 
                 type='text'
                 placeholder='Search by platform name...'
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
+                value={searchBoxInput}
+                onChange={handleInputChange}
             />
             <SearchIcon />
         </SearchBoxContainer>

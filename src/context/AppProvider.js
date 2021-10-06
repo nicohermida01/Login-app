@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { AppContext } from "./AppContext";
 
 const AppProvider = ({ children }) => {
-    const [userAccounts, setUserAccounts] = useState([
+    const [userAccountsList, setUserAccountsList] = useState([
         {
             id: 1,
             platformName: 'Facebook',
@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
         },
         {
             id: 4,
-            platformName: 'League of legends',
+            platformName: 'League Of Legends',
             platformType: 'Game',
             username: 'nicoohermida',
             password: '123456',
@@ -38,7 +38,7 @@ const AppProvider = ({ children }) => {
         },
         {
             id: 5,
-            platformName: 'Counter strike',
+            platformName: 'Counter Strike',
             platformType: 'Game',
             username: 'nicoohermida',
             password: '123456',
@@ -85,13 +85,35 @@ const AppProvider = ({ children }) => {
             email: 'nico@correo.com'
         },
     ]);
+    const [userAccountsDisplay, setUserAccountsDisplay] = useState([]);
+    const [searchBoxInput, setSearchBoxInput] = useState('');
 
+    /* FUNCTION TO SET DEFAULT VALUES */
+    useEffect(() => {
+        /* api conexion */
+        /* get data accounts from api */
+    }, []);
+
+    /* FUNCTION TO DISPLAY THE CORRECT ACCOUNTS */
+    useEffect(() => {
+        if (searchBoxInput === '') setUserAccountsDisplay(userAccountsList);
+        else setUserAccountsDisplay(userAccountsList.filter(account => account.platformName.toUpperCase().indexOf(searchBoxInput.toUpperCase()) > -1));
+    }, [searchBoxInput]);
+
+    /* FUNCTION TO UPDATE THE SEARCHBOX INPUT STATE */
+    const updateSearchBox = (value) => {
+        setSearchBoxInput(value);
+    }
+
+    /* APP STATES */
     const providerValue = {
         data: {
-            userAccounts,
+            userAccountsDisplay,
+            searchBoxInput,
 
         },
         actions: {
+            updateSearchBox,
 
         }
     }

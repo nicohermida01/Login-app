@@ -2,26 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Toolbar from '../components/Toolbar';
-import CardAccount from '../components/CardAccount';
+import AccountCard from '../components/AccountCard';
 import { useAppContext } from '../context/AppContext';
 
 const Home = () => {
-    const { data: { userAccounts } } = useAppContext();
+    const { data: { userAccountsDisplay } } = useAppContext();
 
     return (
         <HomeContainer>
             <Toolbar />
             <Grid>
                 {
-                    userAccounts.map((account) => {
+                    userAccountsDisplay.map((account, index) => {
                         return(
-                            <CardAccount key={account.id}
-                                platformName={account.platformName}
-                                platformType={account.platformType}
-                                username={account.username}
-                                password={account.password}
-                                email={account.email}
-                            />
+                            <AccountCard key={index} account={account}/>
                         );
                     })
                 }

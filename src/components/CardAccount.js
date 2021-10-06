@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Colors from '../commons/Colors';
 import { ButtonDeleteAccount, ButtonEditAccount } from './Buttons';
-import Card from '../elements/CardElements';
 import CardForm from './CardForm';
 
 const CardAccount = ({ platformName, platformType, username, password, email }) => {
@@ -29,6 +28,19 @@ const CardAccount = ({ platformName, platformType, username, password, email }) 
 }
 
 export default CardAccount;
+
+const Card = styled.div`
+    width: 470px;
+    height: 270px;
+    background: ${Colors.BASEBLUE2};
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px;
+    padding-bottom: 50px;
+`;
 
 const CardHeader = styled.header`
     display: flex;

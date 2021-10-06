@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import EditAccount from './pages/EditAccount';
 import AddAccount from './pages/AddAccount';
 import Header from './components/Header';
+import AppProvider from './context/AppProvider';
 
 const Index = () => {
   return(
@@ -21,11 +22,15 @@ const Index = () => {
       <Header />
 
       <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/edit/:id' component={EditAccount} />
-          <Route path='/add' component={AddAccount} />
-        </Switch>  
+        <AppProvider>
+          <div className='appContainer'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/edit/:id' component={EditAccount} />
+              <Route path='/add' component={AddAccount} />
+            </Switch>  
+          </div>
+        </AppProvider>
       </BrowserRouter>
 
     </React.StrictMode>

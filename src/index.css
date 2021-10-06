@@ -35,3 +35,11 @@ body {
 a {
   text-decoration: none;
 }
+
+.appContainer {
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: calc(100vh - 50px);
+  max-height: 100vh;
+  margin: 0 auto;
+}

@@ -3,66 +3,17 @@ import styled from 'styled-components';
 
 import Toolbar from '../components/Toolbar';
 import CardAccount from '../components/CardAccount';
+import { useAppContext } from '../context/AppContext';
 
 const Home = () => {
-    const AccountsData = [
-        {
-            id: 1,
-            platformName: 'Facebook',
-            platformType: 'Social',
-            username: 'nicoohermida',
-            password: '123456',
-            email: 'nico@correo.com'
-        },
-        {
-            id: 2,
-            platformName: 'Instagram',
-            platformType: 'Social',
-            username: 'elJudio123',
-            password: 'elameculos',
-            email: 'callejas@correo.com'
-        },
-        {
-            id: 3,
-            platformName: 'Instagram',
-            platformType: 'Social',
-            username: 'nicoohermida',
-            password: '123456',
-            email: 'nico@correo.com'
-        },
-        {
-            id: 4,
-            platformName: 'League of legends',
-            platformType: 'Game',
-            username: 'nicoohermida',
-            password: '123456',
-            email: 'nico@correo.com'
-        },
-        {
-            id: 5,
-            platformName: 'Counter strike',
-            platformType: 'Game',
-            username: 'nicoohermida',
-            password: '123456',
-            email: 'nico@correo.com'
-        },
-        {
-            id: 6,
-            platformName: 'GTA',
-            platformType: 'Game',
-            username: 'kylu',
-            password: '123456',
-            email: 'kylu@correo.com'
-        },
-
-    ];
+    const { data: { userAccounts } } = useAppContext();
 
     return (
         <HomeContainer>
             <Toolbar />
             <Grid>
                 {
-                    AccountsData.map((account) => {
+                    userAccounts.map((account) => {
                         return(
                             <CardAccount key={account.id}
                                 platformName={account.platformName}
@@ -82,22 +33,24 @@ const Home = () => {
 export default Home;
 
 const HomeContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 30px 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0 0 0;
+    gap: 50px;
 `;
 
 const Grid = styled.div`
-    width: 955px;
-    margin: 50px 0;
-
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 470px);
     gap: 15px;
+    overflow-y: scroll;
     justify-content: center;
 
-    & > * {
-        /* flex: 1; */
+    &::-webkit-scrollbar {
+        display: none;
     }
 `;

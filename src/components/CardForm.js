@@ -103,6 +103,7 @@ const HelperPasswordContainer = styled.div`
         position: absolute;
         top: -26px;
         right: 0;
+        cursor: pointer;
     }
 `;
 

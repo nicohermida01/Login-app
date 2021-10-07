@@ -13,6 +13,8 @@ import { ReactComponent as SearchIcon } from '../assets/images/search.svg';
 import { ReactComponent as EmailIcon } from '../assets/images/email.svg';
 import { ReactComponent as LogoutIcon } from '../assets/images/logout.svg';
 import { ReactComponent as ProfileIcon } from '../assets/images/user-profile.svg'
+import { ReactComponent as SignUpIcon } from '../assets/images/signup.svg';
+import { ReactComponent as SignInIcon } from '../assets/images/signin.svg';
 
 const Images = {
     favicon: Favicon,
@@ -30,6 +32,8 @@ const Images = {
     email: EmailIcon,
     logout: LogoutIcon,
     userProfile: ProfileIcon,
+    signUp: SignUpIcon,
+    signIn: SignInIcon,
     
 }
 

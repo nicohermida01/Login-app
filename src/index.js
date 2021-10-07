@@ -12,6 +12,7 @@ import Header from './components/Header';
 import AppProvider from './context/AppProvider';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import UserProfile from './pages/UserProfile';
 
 const Index = () => {
   return(
@@ -31,6 +32,7 @@ const Index = () => {
               <Route exact path='/' component={Home} />
               <Route path='/edit-account/:id' component={EditAccount} />
               <Route path='/add-account' component={AddAccount} />
+              <Route path='/user-profile' component={UserProfile} />
               <Route path='/sign-in' component={SignIn} />
               <Route path='/sign-up' component={SignUp} />
             </Switch>  

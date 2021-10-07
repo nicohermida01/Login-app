@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
 import { useAppContext } from '../context/AppContext';
+import { ProfileButton, LogoutButton, SignInButton, SignUpButton } from '../buttons/HeaderButtons';
 
 const Header = () => {
     const { data: { userConnected } } = useAppContext();
@@ -19,25 +20,15 @@ const Header = () => {
                 {
                     userConnected ?
                         <Navbar small>
-                            <NavItem>
-                                <NavLink href="#">Hello Username!</NavLink>
-                                <ProfileIcon />
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#">Sign Out</NavLink>
-                                <LogoutIcon />
-                            </NavItem>
+                            <ProfileButton />
+                            <LogoutButton />
                         </Navbar>
 
                     :
 
                         <Navbar>
-                            <NavItem>
-                                <NavLink href="#">Sign In</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#">Sign Up</NavLink>
-                            </NavItem>
+                            <SignInButton />
+                            <SignUpButton />
                         </Navbar>
                 }
             </HeaderMain>
@@ -82,7 +73,7 @@ const Title = styled.h1`
 `;
 
 const Navbar = styled.nav`
-    width: ${props => props.small ? '400px' : '200px'};
+    width: ${props => props.small ? '400px' : '300px'};
     height: 50px;
     display: flex;
 
@@ -90,32 +81,4 @@ const Navbar = styled.nav`
         flex: 1;
     }
 `;
-
-const NavItem = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s ease all;
-    cursor: pointer;
-
-    &:hover {
-        background: ${Colors.BASEBLUE4};
-    }
-
-    & > svg {
-        width: 20px;
-        fill: ${Colors.BASEBLUE1};
-        margin-left: 10px;
-    }
-`;
-
-const NavLink = styled.a`
-    color: ${Colors.BASEBLUE1};
-`;
-
-const ProfileIcon = styled(Images.userProfile)``;
-const LogoutIcon = styled(Images.logout)``;
-
 

@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   font-family: Sansation, sans-serif;
   background: #00285B url('./assets/images/wave.svg') bottom no-repeat fixed;
+  color: #fff;
 }
 
 #root {

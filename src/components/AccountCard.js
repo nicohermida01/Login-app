@@ -17,7 +17,7 @@ const AccountCard = ({ account }) => {
                 </CardDetails>
 
                 <CardButtons>
-                    <ButtonEditAccount />
+                    <ButtonEditAccount id={account.id}/>
                     <ButtonDeleteAccount />
                 </CardButtons>
             </CardHeader>

@@ -87,7 +87,7 @@ const AppProvider = ({ children }) => {
     ]);
     const [userAccountsDisplay, setUserAccountsDisplay] = useState([]);
     const [searchBoxInput, setSearchBoxInput] = useState('');
-    const [userConnected, setUserConnected] = useState(true);
+    const [userConnected, setUserConnected] = useState(false);
 
     /* FUNCTION TO GET USER ACCOUNTS */
     useEffect(() => {

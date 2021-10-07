@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
@@ -14,9 +15,9 @@ export const ButtonFilters = () => {
 
 export const ButtonAddAccount = () => {
     return(
-        <BtnCircle>
+        <BtnCircleLink to='/add-account'>
             <AddIcon />
-        </BtnCircle>
+        </BtnCircleLink>
     )
 }
 
@@ -28,13 +29,46 @@ export const ButtonDeleteAccount = () => {
     )
 }
 
-export const ButtonEditAccount = () => {
+export const ButtonEditAccount = ({ id }) => {
     return(
-        <BtnCircle card>
+        <BtnCircleLink card to={`/edit-account/${id}`}>
             <EditIcon />
-        </BtnCircle>
+        </BtnCircleLink>
     )
 }
+
+
+
+const BtnCircleLink = styled(Link)`
+    width: ${props => props.card ? '28px' : '40px'};
+    height: ${props => props.card ? '28px' : '40px'};
+    border-radius: 50%;
+    background: ${Colors.BASEBLUE3};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease all;
+
+    & > svg {
+        fill: ${Colors.BASEBLUE1};
+    }
+    
+    &:hover {
+        box-shadow: 0 0 10px 1px rgba(242,242,242,.75);
+        box-shadow: ${props => props.card ?
+            '0 0 10px 0 rgba(242,242,242,.75)'
+        :
+            '0 0 10px 1px rgba(242,242,242,.75)'
+        };
+    }
+`;
+
+const BtnNormalLink = styled(Link)`
+
+`;
+
 
 const BtnCircle = styled.button`
     width: ${props => props.card ? '28px' : '40px'};

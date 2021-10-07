@@ -55,9 +55,9 @@ const SearchInput = styled.input`
 
 const SearchIcon = styled(Images.search)`
     width: 18px;
-    height: 18px;
+    fill: ${Colors.BASEBLUE1};
     position: absolute;
     top: 11px;
     right: 45px;
-    cursor: pointer;
+    cursor: text;
 `;

@@ -37,11 +37,11 @@ export const ButtonEditAccount = () => {
 }
 
 const BtnCircle = styled.button`
-    width: ${props => props.card ? '30px' : '40px'};
-    height: ${props => props.card ? '30px' : '40px'};
+    width: ${props => props.card ? '28px' : '40px'};
+    height: ${props => props.card ? '28px' : '40px'};
     border-radius: 50%;
     background: ${Colors.BASEBLUE3};
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     border: none;
@@ -49,7 +49,7 @@ const BtnCircle = styled.button`
     transition: .3s ease all;
 
     & > svg {
-        width: ${props => props.card ? '16px' : '20px'};
+        fill: ${Colors.BASEBLUE1};
     }
     
     &:hover {
@@ -62,7 +62,15 @@ const BtnCircle = styled.button`
     }
 `;
 
-const FiltersIcon = styled(Images.filters)``;
-const AddIcon = styled(Images.addAccount)``;
-const DeleteIcon = styled(Images.deleteAccount)``;
-const EditIcon = styled(Images.editAccount)``;
+const FiltersIcon = styled(Images.filters)`
+    width: 28px;
+`;
+const AddIcon = styled(Images.addAccount)`
+    width: 18px;
+`;
+const DeleteIcon = styled(Images.deleteAccount)`
+    width: 14px;
+`;
+const EditIcon = styled(Images.editAccount)`
+    width: 14px;
+`;

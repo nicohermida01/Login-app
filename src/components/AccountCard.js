@@ -15,6 +15,7 @@ const AccountCard = ({ account }) => {
                     <PlatformName>{account.platformName}</PlatformName>
                     <PlatformType>{account.platformType}</PlatformType>
                 </CardDetails>
+
                 <CardButtons>
                     <ButtonEditAccount />
                     <ButtonDeleteAccount />
@@ -30,6 +31,7 @@ const AccountCard = ({ account }) => {
                     />
                     <UserIcon />
                 </InputContainer>
+
                 {
                     visiblePassword ?
                         <InputContainer>
@@ -39,9 +41,7 @@ const AccountCard = ({ account }) => {
                                 readOnly
                             />
                             <PasswordIcon />
-                            <HelpContainer>
-                                <UnHidePassword onClick={() => setVisiblePassword(!visiblePassword)} />
-                            </HelpContainer>
+                            <UnHidePassword onClick={() => setVisiblePassword(!visiblePassword)} />
                         </InputContainer>
                     :
                         <InputContainer>
@@ -51,11 +51,10 @@ const AccountCard = ({ account }) => {
                                 readOnly
                             />
                             <PasswordIcon />
-                            <HelpContainer>
-                                <HidePassword onClick={() => setVisiblePassword(!visiblePassword)} />
-                            </HelpContainer>    
+                            <HidePassword onClick={() => setVisiblePassword(!visiblePassword)} /> 
                         </InputContainer>
                 }
+                
                 <InputContainer>
                     <Input 
                         type="email" 
@@ -129,13 +128,7 @@ const InputContainer = styled.div`
     position: relative;
 
     & > svg {
-        width: 18px;
-        height: 18px;
         fill: ${Colors.BASEBLUE4};
-
-        position: absolute;
-        top: 5px;
-        left: 0;
     }
 `;
 
@@ -153,24 +146,39 @@ const Input = styled.input`
     padding-bottom: 3px;
 `;
 
-const HelpContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    position: relative;
-
-    & > svg {
-        width: 20px;
-        height: 20px;
-        fill: ${Colors.BASEBLUE4};
-        position: absolute;
-        top: -26px;
-        right: 0;
-        cursor: pointer;
-    }
+const UserIcon = styled(Images.user)`
+    width: 20px;
+    cursor: text;
+    position: absolute;
+    top: 2px;
+    left: 0;
+`;
+const PasswordIcon = styled(Images.password)`
+    width: 18px;
+    cursor: text;
+    position: absolute;
+    top: 2px;
+    left: 0;
+`;
+const EmailIcon = styled(Images.email)`
+    width: 18px;
+    cursor: text;
+    position: absolute;
+    top: 4px;
+    left: 0;
 `;
 
-const UserIcon = styled(Images.user)``;
-const PasswordIcon = styled(Images.lockPassword)``;
-const EmailIcon = styled(Images.email)``;
-const HidePassword = styled(Images.hidePassword)``;
-const UnHidePassword = styled(Images.unHidePassword)``;
+const HidePassword = styled(Images.hidePassword)`
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 0;
+`;
+const UnHidePassword = styled(Images.unHidePassword)`
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 0;
+`;

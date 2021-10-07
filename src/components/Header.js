@@ -3,8 +3,11 @@ import styled from 'styled-components';
 
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
+import { useAppContext } from '../context/AppContext';
 
 const Header = () => {
+    const { data: { userConnected } } = useAppContext();
+
     return (
         <HeaderContainer>
             <HeaderMain>
@@ -12,10 +15,31 @@ const Header = () => {
                     <Logo src={Images.logoApp} alt="logo app"/>
                     <Title>Login App</Title>
                 </AppLogo>
-                <Navbar>
-                    <NavLink href="#">Sign In</NavLink>
-                    <NavLink href="#">Sign Up</NavLink>
-                </Navbar>
+
+                {
+                    userConnected ?
+                        <Navbar small>
+                            <NavItem>
+                                <NavLink href="#">Hello Username!</NavLink>
+                                <ProfileIcon />
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#">Sign Out</NavLink>
+                                <LogoutIcon />
+                            </NavItem>
+                        </Navbar>
+
+                    :
+
+                        <Navbar>
+                            <NavItem>
+                                <NavLink href="#">Sign In</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#">Sign Up</NavLink>
+                            </NavItem>
+                        </Navbar>
+                }
             </HeaderMain>
         </HeaderContainer>
     )
@@ -47,7 +71,7 @@ const AppLogo = styled.div`
 
 const Logo = styled.img`
     width: 24px;
-    height: 24px;
+    cursor: text;
 `;
 
 const Title = styled.h1`
@@ -58,25 +82,40 @@ const Title = styled.h1`
 `;
 
 const Navbar = styled.nav`
-    width: 200px;
+    width: ${props => props.small ? '400px' : '200px'};
+    height: 50px;
     display: flex;
-    justify-content: space-between;
-    text-align: center;
 
     & > * {
         flex: 1;
     }
-
 `;
 
-const NavLink = styled.a`
-    color: ${Colors.BASEBLUE1};
-    line-height: 50px;
+const NavItem = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: .3s ease all;
+    cursor: pointer;
 
     &:hover {
         background: ${Colors.BASEBLUE4};
     }
+
+    & > svg {
+        width: 20px;
+        fill: ${Colors.BASEBLUE1};
+        margin-left: 10px;
+    }
 `;
+
+const NavLink = styled.a`
+    color: ${Colors.BASEBLUE1};
+`;
+
+const ProfileIcon = styled(Images.userProfile)``;
+const LogoutIcon = styled(Images.logout)``;
 
 

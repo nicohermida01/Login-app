@@ -87,14 +87,15 @@ const AppProvider = ({ children }) => {
     ]);
     const [userAccountsDisplay, setUserAccountsDisplay] = useState([]);
     const [searchBoxInput, setSearchBoxInput] = useState('');
+    const [userConnected, setUserConnected] = useState(true);
 
-    /* FUNCTION TO SET DEFAULT VALUES */
+    /* FUNCTION TO GET USER ACCOUNTS */
     useEffect(() => {
         /* api conexion */
         /* get data accounts from api */
     }, []);
 
-    /* FUNCTION TO DISPLAY THE CORRECT ACCOUNTS */
+    /* FUNCTION TO FILTER ACCOUNTS BY SEARCHBOX INPUT */
     useEffect(() => {
         if (searchBoxInput === '') setUserAccountsDisplay(userAccountsList);
         else setUserAccountsDisplay(userAccountsList.filter(account => account.platformName.toUpperCase().indexOf(searchBoxInput.toUpperCase()) > -1));
@@ -110,6 +111,7 @@ const AppProvider = ({ children }) => {
         data: {
             userAccountsDisplay,
             searchBoxInput,
+            userConnected,
 
         },
         actions: {

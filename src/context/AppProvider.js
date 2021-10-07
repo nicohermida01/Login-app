@@ -21,6 +21,14 @@ const AppProvider = ({ children }) => {
             email: 'callejas@correo.com'
         },
         {
+            id: 11,
+            platformName: 'Yahoo',
+            platformType: 'Email',
+            username: '',
+            password: '123456789',
+            email: 'pepita_lp17@yahoo.com.ar'
+        },
+        {
             id: 3,
             platformName: 'Instagram',
             platformType: 'Social',
@@ -87,7 +95,7 @@ const AppProvider = ({ children }) => {
     ]);
     const [userAccountsDisplay, setUserAccountsDisplay] = useState([]);
     const [searchBoxInput, setSearchBoxInput] = useState('');
-    const [userConnected, setUserConnected] = useState(false);
+    const [userConnected, setUserConnected] = useState(true);
 
     /* FUNCTION TO GET USER ACCOUNTS */
     useEffect(() => {
@@ -106,6 +114,10 @@ const AppProvider = ({ children }) => {
         setSearchBoxInput(value);
     }
 
+    const handleUserConected = () => {
+        setUserConnected(!userConnected)
+    }
+
     /* APP STATES */
     const providerValue = {
         data: {
@@ -116,6 +128,7 @@ const AppProvider = ({ children }) => {
         },
         actions: {
             updateSearchBox,
+            handleUserConected,
 
         }
     }

@@ -37,8 +37,6 @@ export const ButtonEditAccount = ({ id }) => {
     )
 }
 
-
-
 const BtnCircleLink = styled(Link)`
     width: ${props => props.card ? '28px' : '40px'};
     height: ${props => props.card ? '28px' : '40px'};
@@ -64,11 +62,6 @@ const BtnCircleLink = styled(Link)`
         };
     }
 `;
-
-const BtnNormalLink = styled(Link)`
-
-`;
-
 
 const BtnCircle = styled.button`
     width: ${props => props.card ? '28px' : '40px'};

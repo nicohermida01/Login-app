@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ButtonFilters, ButtonAddAccount } from './Buttons';
+import { ButtonFilters, ButtonAddAccount } from '../buttons/CircleButtons';
 import SearchBox from './SearchBox';
 
 const Toolbar = () => {

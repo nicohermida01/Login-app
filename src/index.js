@@ -29,7 +29,7 @@ const Index = () => {
           <Header />
           <div className='appContainer'>
             <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/home' component={Home} />
               <Route path='/edit-account/:id' component={EditAccount} />
               <Route path='/add-account' component={AddAccount} />
               <Route path='/user-profile' component={UserProfile} />

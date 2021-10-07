@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
+import { useAppContext } from '../context/AppContext';
 
 export const ProfileButton = () => {
     return(
@@ -15,8 +16,10 @@ export const ProfileButton = () => {
 }
 
 export const LogoutButton = () => {
+    const { actions: { handleUserConected } } = useAppContext();
+
     return(
-        <NavBtn to='/sign-in'>
+        <NavBtn to='/sign-in' onClick={() => handleUserConected()}>
             Sign Out
             <LogoutIcon />
         </NavBtn>

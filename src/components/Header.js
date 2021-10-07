@@ -73,9 +73,10 @@ const Title = styled.h1`
 `;
 
 const Navbar = styled.nav`
-    width: ${props => props.small ? '400px' : '300px'};
+    width: ${props => props.small ? '400px' : '350px'};
     height: 50px;
     display: flex;
+    transition: .5s ease all;
 
     & > * {
         flex: 1;

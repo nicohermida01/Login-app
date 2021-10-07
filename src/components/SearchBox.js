@@ -46,7 +46,6 @@ const SearchInput = styled.input`
     text-align: center;
     color: ${Colors.BASEBLUE1};
     font-size: 20px;
-    font-family: Sansation, sans-serif;
 
     &::placeholder {
         color: ${Colors.BASEBLUE1};

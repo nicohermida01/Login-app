@@ -29,6 +29,11 @@ body {
   color: #fff;
 }
 
+input {
+  font-family: Sansation, sans-serif;
+}
+
+
 #root {
   width: 100%;
 }

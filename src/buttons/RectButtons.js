@@ -20,6 +20,14 @@ export const CancelButton = () => {
     )
 }
 
+export const ConfirmButton = () => {
+    return(
+        <Button>
+            Confirm
+        </Button>
+    )
+}
+
 const LinkButton = styled(Link)`
     width: 200px;
     height: 60px;

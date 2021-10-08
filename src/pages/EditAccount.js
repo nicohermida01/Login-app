@@ -20,7 +20,7 @@ const EditAccount = () => {
             <Title>Edit Account</Title>
 
             <MainContainer>
-                <AccountCard account={account}/>
+                <AccountCard account={account} readOnly={false}/>
                     
                 <ButtonsContainer>
                     <ConfirmButton />

@@ -15,7 +15,7 @@ const Home = () => {
                 {
                     userAccountsDisplay.map((account, index) => {
                         return(
-                            <AccountCard key={index} account={account}/>
+                            <AccountCard key={index} account={account} readOnly={true} />
                         );
                     })
                 }

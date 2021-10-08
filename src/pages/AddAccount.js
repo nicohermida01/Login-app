@@ -15,7 +15,7 @@ const AddAccount = () => {
             <Title>New Account</Title>
 
             <MainContainer>
-                <AccountCard />
+                <AccountCard readOnly={false}/>
                     
                 <ButtonsContainer>
                     <CreateAccountButton />

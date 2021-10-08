@@ -13,12 +13,9 @@ const AccountCard = ({ account, readOnly }) => {
     const [passwordInput, setPasswordInput] = useState('');
     const [emailInput, setEmailInput] = useState('');
     const [newCard, setNewCard] = useState(true);
-
-    console.log(account);
     
     /* funcion para comprobar si tenemos una cuenta ya hecha */
     useEffect(() => {
-        console.log('me ejecuto');
 
         if (account) {
             /* HACER */
@@ -28,7 +25,7 @@ const AccountCard = ({ account, readOnly }) => {
             setPlatformNameInput(account.platformName);
             setPlatformTypeInput(account.platformType);
             setUsernameInput(account.username);
-            setPasswordInput(account.passowrd);
+            setPasswordInput(account.password);
             setEmailInput(account.email);
             setNewCard(false);
         }
@@ -43,12 +40,16 @@ const AccountCard = ({ account, readOnly }) => {
                         placeholder='Platform name'
                         value={platformNameInput}
                         onChange={(e) => setPlatformNameInput(e.target.value)}
+                        readOnly={readOnly}
+                        required
                     />
                     <PlatformType 
                         type='text' 
                         placeholder='Platform type'
                         value={platformTypeInput}
                         onChange={(e) => setPlatformTypeInput(e.target.value)}
+                        readOnly={readOnly}
+                        required
                     />
                 </CardDetails>
 
@@ -68,6 +69,7 @@ const AccountCard = ({ account, readOnly }) => {
                         placeholder='Username'
                         value={usernameInput}
                         onChange={(e) => setUsernameInput(e.target.value)}
+                        readOnly={readOnly}
                     />
                     <UserIcon />
                 </InputContainer>
@@ -80,6 +82,8 @@ const AccountCard = ({ account, readOnly }) => {
                                 placeholder='Password'
                                 value={passwordInput}
                                 onChange={(e) => setPasswordInput(e.target.value)}
+                                readOnly={readOnly}
+                                required
                             />
                             <PasswordIcon />
                             <UnHidePasswordIcon onClick={() => setVisiblePassword(!visiblePassword)}/>
@@ -91,6 +95,8 @@ const AccountCard = ({ account, readOnly }) => {
                                 placeholder='Password'
                                 value={passwordInput}
                                 onChange={(e) => setPasswordInput(e.target.value)}
+                                readOnly={readOnly}
+                                required
                             />
                             <PasswordIcon />
                             <HidePasswordIcon onClick={() => setVisiblePassword(!visiblePassword)}/>
@@ -103,6 +109,7 @@ const AccountCard = ({ account, readOnly }) => {
                         placeholder='Email'
                         value={emailInput}
                         onChange={(e) => setEmailInput(e.target.value)}
+                        readOnly={readOnly}
                     />
                     <EmailIcon />
                 </InputContainer>

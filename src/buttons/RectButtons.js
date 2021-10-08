@@ -6,7 +6,7 @@ import Colors from '../commons/Colors';
 
 export const CreateAccountButton = () => {
     return(
-        <Button>
+        <Button type='submit'>
             Create Account
         </Button>
     )
@@ -22,7 +22,7 @@ export const CancelButton = () => {
 
 export const ConfirmButton = () => {
     return(
-        <Button>
+        <Button type='submit'>
             Confirm
         </Button>
     )

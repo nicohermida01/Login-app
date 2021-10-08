@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Toolbar from '../components/Toolbar';
-import CardHome from '../components/CardHome';
+import AccountCard from '../components/AccountCard';
 import { useAppContext } from '../context/AppContext';
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
                 {
                     userAccountsDisplay.map((account, index) => {
                         return(
-                            <CardHome key={index} account={account}/>
+                            <AccountCard key={index} account={account}/>
                         );
                     })
                 }

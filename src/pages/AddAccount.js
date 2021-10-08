@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardNew from '../components/CardNew';
+import AccountCard from '../components/AccountCard';
 import { CreateAccountButton, CancelButton } from '../buttons/RectButtons';
 import {
     Container,
@@ -15,7 +15,7 @@ const AddAccount = () => {
             <Title>New Account</Title>
 
             <MainContainer>
-                <CardNew />
+                <AccountCard />
                     
                 <ButtonsContainer>
                     <CreateAccountButton />

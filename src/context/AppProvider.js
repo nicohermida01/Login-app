@@ -121,6 +121,7 @@ const AppProvider = ({ children }) => {
     /* APP STATES */
     const providerValue = {
         data: {
+            userAccountsList,
             userAccountsDisplay,
             searchBoxInput,
             userConnected,

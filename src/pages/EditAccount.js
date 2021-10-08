@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import {
     Container,
@@ -6,16 +7,20 @@ import {
     MainContainer,
     ButtonsContainer
 } from '../elements/PageElements';
-import CardEdit from '../components/CardEdit';
+import AccountCard from '../components/AccountCard';
 import { ConfirmButton, CancelButton } from '../buttons/RectButtons';
+import useGetAccount from '../hooks/useGetAccount';
 
 const EditAccount = () => {
+    const { id } = useParams();
+    const account = useGetAccount(id);
+
     return (
         <Container>
             <Title>Edit Account</Title>
 
             <MainContainer>
-                <CardEdit />
+                <AccountCard account={account}/>
                     
                 <ButtonsContainer>
                     <ConfirmButton />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -16,7 +16,8 @@ import UserProfile from './pages/UserProfile';
 
 const Index = () => {
   return(
-    <React.StrictMode>
+    <Fragment>
+
       <Helmet>
         <title>Login App</title>
         <link rel='icon' type='image/x-icon' href={Images.favicon} />
@@ -40,7 +41,7 @@ const Index = () => {
         </AppProvider>
       </BrowserRouter>
 
-    </React.StrictMode>
+    </Fragment>
   )
 }
 

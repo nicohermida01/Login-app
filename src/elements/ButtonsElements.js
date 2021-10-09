@@ -1,43 +1,54 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Colors from '../commons/Colors';
-import Images from '../commons/Images';
 
-export const ButtonFilters = () => {
-    return(
-        <BtnCircle>
-            <FiltersIcon />
-        </BtnCircle>
-    )
-}
+export const Button = styled.button`
+    width: 200px;
+    height: 60px;
+    background: ${Colors.SUCCES};
+    outline: none;
+    border: none;
+    font-family: Sansation, sans-serif;
+    border-radius: 10px;
+    color: ${Colors.BASEBLUE1};
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0, .5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    transition: .3s ease all;
 
-export const ButtonAddAccount = () => {
-    return(
-        <BtnCircleLink to='/add-account'>
-            <AddIcon />
-        </BtnCircleLink>
-    )
-}
+    &:hover {
+        background: ${Colors.SUCCESHOVER};
+    }
+`;
 
-export const ButtonDeleteAccount = () => {
-    return(
-        <BtnCircle card>
-            <DeleteIcon />
-        </BtnCircle>
-    )
-}
+export const LinkButton = styled(Link)`
+    width: 200px;
+    height: 60px;
+    background: ${Colors.BASEBLUE3};
+    outline: none;
+    border: none;
+    color: ${Colors.BASEBLUE1};
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Sansation, sans-serif;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0, .5);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    transition: .3s ease all;
 
-export const ButtonEditAccount = ({ id }) => {
-    return(
-        <BtnCircleLink card to={`/edit-account/${id}`}>
-            <EditIcon />
-        </BtnCircleLink>
-    )
-}
+    &:hover {
+        background: ${Colors.BASEBLUE4};
+    }
+`;
 
-const BtnCircleLink = styled(Link)`
+export const BtnCircleLink = styled(Link)`
     width: ${props => props.card ? '28px' : '40px'};
     height: ${props => props.card ? '28px' : '40px'};
     border-radius: 50%;
@@ -63,7 +74,7 @@ const BtnCircleLink = styled(Link)`
     }
 `;
 
-const BtnCircle = styled.button`
+export const BtnCircle = styled.button`
     width: ${props => props.card ? '28px' : '40px'};
     height: ${props => props.card ? '28px' : '40px'};
     border-radius: 50%;
@@ -87,17 +98,4 @@ const BtnCircle = styled.button`
             '0 0 10px 1px rgba(242,242,242,.75)'
         };
     }
-`;
-
-const FiltersIcon = styled(Images.filters)`
-    width: 28px;
-`;
-const AddIcon = styled(Images.addAccount)`
-    width: 18px;
-`;
-const DeleteIcon = styled(Images.deleteAccount)`
-    width: 14px;
-`;
-const EditIcon = styled(Images.editAccount)`
-    width: 14px;
 `;

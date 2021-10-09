@@ -1,13 +1,13 @@
 import React from 'react';
 
 import AccountCard from '../components/AccountCard';
-import { CreateAccountButton, CancelButton } from '../buttons/RectButtons';
 import {
     Container,
     Title,
     MainContainer,
     ButtonsContainer
 } from '../elements/PageElements';
+import { LinkButton, Button } from '../elements/ButtonsElements';
 
 const AddAccount = () => {
     return (
@@ -18,8 +18,13 @@ const AddAccount = () => {
                 <AccountCard readOnly={false}/>
                     
                 <ButtonsContainer>
-                    <CreateAccountButton />
-                    <CancelButton />
+                    <Button>
+                        Create Account
+                    </Button>
+
+                    <LinkButton to='/home'>
+                        Cancel
+                    </LinkButton>
                 </ButtonsContainer>
             </MainContainer>
         </Container>

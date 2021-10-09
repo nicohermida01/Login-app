@@ -7,8 +7,8 @@ import {
     MainContainer,
     ButtonsContainer
 } from '../elements/PageElements';
+import { Button, LinkButton } from '../elements/ButtonsElements';
 import AccountCard from '../components/AccountCard';
-import { ConfirmButton, CancelButton } from '../buttons/RectButtons';
 import useGetAccount from '../hooks/useGetAccount';
 
 const EditAccount = () => {
@@ -23,8 +23,13 @@ const EditAccount = () => {
                 <AccountCard account={account} readOnly={false}/>
                     
                 <ButtonsContainer>
-                    <ConfirmButton />
-                    <CancelButton />
+                    <Button>
+                        Confirm
+                    </Button>
+
+                    <LinkButton to='/home'>
+                        Cancel
+                    </LinkButton>
                 </ButtonsContainer>
             </MainContainer>
         </Container>

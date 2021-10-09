@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Colors from '../commons/Colors';
 import Images from '../commons/Images';
-import { ButtonDeleteAccount, ButtonEditAccount } from '../buttons/CircleButtons';
+import { BtnCircleLink, BtnCircle } from '../elements/ButtonsElements';
 
 const AccountCard = ({ account, readOnly }) => {
     const [visiblePassword, setVisiblePassword] = useState(false);
@@ -56,8 +56,13 @@ const AccountCard = ({ account, readOnly }) => {
                 {
                     !newCard &&
                     <CardButtons>
-                        <ButtonEditAccount id={account.id}/>
-                        <ButtonDeleteAccount />
+                        <BtnCircleLink card to={`/edit-account/${account.id}`}>
+                            <EditIcon />
+                        </BtnCircleLink>
+
+                        <BtnCircle card>
+                            <DeleteIcon />
+                        </BtnCircle>
                     </CardButtons>
                 }
             </CardHeader>
@@ -248,6 +253,14 @@ const UnHidePasswordIcon = styled(Images.unHidePassword)`
     position: absolute;
     top: 5px;
     right: 0;
+`;
+
+const EditIcon = styled(Images.editAccount)`
+    width: 14px;
+`;
+
+const DeleteIcon = styled(Images.deleteAccount)`
+    width: 14px;
 `;
 
 

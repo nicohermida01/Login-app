@@ -1,15 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ButtonFilters, ButtonAddAccount } from '../buttons/CircleButtons';
+import { BtnCircleLink, BtnCircle } from '../elements/ButtonsElements';
 import SearchBox from './SearchBox';
+import Images from '../commons/Images';
 
 const Toolbar = () => {
     return (
         <ToolbarContainer>
-            <ButtonFilters />
+            <BtnCircle>
+                <FiltersIcon />
+            </BtnCircle>
+
             <SearchBox />
-            <ButtonAddAccount />
+
+            <BtnCircleLink to='/add-account'>
+                <AddIcon />
+            </BtnCircleLink>
         </ToolbarContainer>
     )
 }
@@ -18,5 +25,13 @@ export default Toolbar;
 
 const ToolbarContainer = styled.div`
     display: flex;
+`;
+
+const AddIcon = styled(Images.addAccount)`
+    width: 18px;
+`;
+
+const FiltersIcon = styled(Images.filters)`
+    width: 28px;
 `;
 
